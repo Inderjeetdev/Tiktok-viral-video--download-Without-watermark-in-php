@@ -32,23 +32,8 @@
                 }
                 
                 //get max 30 videos data on basis of cursor position
-                $curl = curl_init();
-                curl_setopt_array($curl, array(
-                  CURLOPT_URL => 'https://api.tikapi.io/public/hashtag?count=30&cursor='.$increment_cursor.'&id='.$id,
-                  CURLOPT_RETURNTRANSFER => true,
-                  CURLOPT_ENCODING => '',
-                  CURLOPT_MAXREDIRS => 10,
-                  CURLOPT_TIMEOUT => 0,
-                  CURLOPT_FOLLOWLOCATION => true,
-                  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                  CURLOPT_CUSTOMREQUEST => 'GET',
-                  CURLOPT_HTTPHEADER => array(
-                    'X-API-KEY: XXX_UPDATE_XXX',
-                    'accept: application/json'
-                  ),
-                ));
-                $response = curl_exec($curl);
-                curl_close($curl);
+                
+                /* Code hidden in reference version */
                 
                 $response = json_decode($response, true);
                 
@@ -191,7 +176,7 @@
                 //Else, redirect to download and upload file with keyword, viral_v_id and virality_score
                 } else {
 
-                    
+                    /* Code hidden in reference version */
                     
                     $baseURL = "https://ziscom.in/projects/test/upload-to-dropbox.php";
                     header("Location: $baseURL?keyword=$keyword&viral_v_id=$viral_v_id&virality_score=$virality_score");
